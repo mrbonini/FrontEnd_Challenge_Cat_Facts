@@ -14,6 +14,12 @@ const newFacts = [newFact1 = document.getElementById('newFact1'),
                     newFact4 = document.getElementById('newFact4'),
                     newFact5 = document.getElementById('newFact5')];
 
+newFact1.style.display = "none";
+newFact2.style.display = "none";
+newFact3.style.display = "none";
+newFact4.style.display = "none";
+newFact5.style.display = "none";
+
 newFact1.addEventListener('click', function() {
     fetch(facts)
         .then(response => response.text())
@@ -95,7 +101,12 @@ button.addEventListener('click', function() {
             })
             
         });
-        button.innerHTML = "Atualizar Lista!"
+        button.innerHTML = "Atualizar Lista!";
+        newFact1.style.display = "inline";
+        newFact2.style.display = "inline";
+        newFact3.style.display = "inline";
+        newFact4.style.display = "inline";
+        newFact5.style.display = "inline";
     })
     
 
