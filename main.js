@@ -14,11 +14,21 @@ const newFacts = [newFact1 = document.getElementById('newFact1'),
                     newFact4 = document.getElementById('newFact4'),
                     newFact5 = document.getElementById('newFact5')];
 
+const container = document.getElementById('listContainer')
+
 newFact1.style.display = "none";
 newFact2.style.display = "none";
 newFact3.style.display = "none";
 newFact4.style.display = "none";
 newFact5.style.display = "none";
+
+fact1.style.display = "none";
+fact2.style.display = "none";
+fact3.style.display = "none";
+fact4.style.display = "none";
+fact5.style.display = "none";
+
+container.style.display="none";
 
 newFact1.addEventListener('click', function() {
     fetch(facts)
@@ -107,6 +117,14 @@ button.addEventListener('click', function() {
         newFact3.style.display = "inline";
         newFact4.style.display = "inline";
         newFact5.style.display = "inline";
+        container.style.display = "block";
+        fact1.style.display = "block";
+        fact2.style.display = "block";
+        fact3.style.display = "block";
+        fact4.style.display = "block";
+        fact5.style.display = "block";
+
+
     })
     
 
