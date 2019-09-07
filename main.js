@@ -1,18 +1,102 @@
 const facts = "./facts.json";
-const random = Math.floor(Math.random() * 226);
-fetch(facts)
-    .then(response => response.text())
-    .then(result => {
-        const data = JSON.parse(result)
-        
-        data.map(facts => {
-            
-            const { text } = facts;
-            
-            let newArray = [facts.text]
-            
-            console.log(newArray[random])
-            
+
+const button = document.getElementById('botao')
+
+const myFacts = [fact1 = document.getElementById('fact1'),
+                    fact2 = document.getElementById('fact2'),
+                    fact3 = document.getElementById('fact3'),
+                    fact4 = document.getElementById('fact4'),
+                    fact5 = document.getElementById('fact5')];
+
+const newFacts = [newFact1 = document.getElementById('newFact1'),
+                    newFact2 = document.getElementById('newFact2'),
+                    newFact3 = document.getElementById('newFact3'),
+                    newFact4 = document.getElementById('newFact4'),
+                    newFact5 = document.getElementById('newFact5')];
+
+newFact1.addEventListener('click', function() {
+    fetch(facts)
+        .then(response => response.text())
+        .then(result => {
+            const data = JSON.parse(result)
+
+            data.map(fact => {
+                fact1.innerText = data[Math.floor(Math.random() * data.length)].text;
+            })
         })
-        
-    });
+})
+
+newFact2.addEventListener('click', function() {
+    fetch(facts)
+        .then(response => response.text())
+        .then(result => {
+            const data = JSON.parse(result)
+
+            data.map(fact => {
+                fact2.innerText = data[Math.floor(Math.random() * data.length)].text;
+            })
+        })
+})
+
+newFact3.addEventListener('click', function() {
+    fetch(facts)
+        .then(response => response.text())
+        .then(result => {
+            const data = JSON.parse(result)
+
+            data.map(fact => {
+                fact3.innerText = data[Math.floor(Math.random() * data.length)].text;
+            })
+        })
+})
+
+newFact4.addEventListener('click', function() {
+    fetch(facts)
+        .then(response => response.text())
+        .then(result => {
+            const data = JSON.parse(result)
+
+            data.map(fact => {
+                fact4.innerText = data[Math.floor(Math.random() * data.length)].text;
+            })
+        })
+})
+
+newFact5.addEventListener('click', function() {
+    fetch(facts)
+        .then(response => response.text())
+        .then(result => {
+            const data = JSON.parse(result)
+
+            data.map(fact => {
+                fact5.innerText = data[Math.floor(Math.random() * data.length)].text;
+            })
+        })
+})
+
+button.addEventListener('click', function() {
+    fetch(facts)
+        .then(response => response.text())
+        .then(result => {
+            const data = JSON.parse(result)
+            
+            data.map(fact => {
+                /*fact1.innerText = data[Math.floor(Math.random() * data.length)].text
+                fact2.innerText = data[Math.floor(Math.random() * data.length)].text
+                fact3.innerText = data[Math.floor(Math.random() * data.length)].text
+                fact4.innerText = data[Math.floor(Math.random() * data.length)].text
+                fact5.innerText = data[Math.floor(Math.random() * data.length)].text*/
+                myFacts.forEach(function(myFact){
+                    myFact.innerText = data[Math.floor(Math.random() * data.length)].text;
+                                        
+                }) 
+
+                
+            })
+            
+        });
+        button.innerHTML = "Atualizar Lista!"
+    })
+    
+
+
