@@ -30,6 +30,43 @@ fact5.style.display = "none";
 
 container.style.display="none";
 
+function getFact() {
+    fetch(facts)
+        .then(response => response.text())
+        .then(result => {
+            const data = JSON.parse(result)
+            
+            data.map(fact => {
+                /*fact1.innerText = data[Math.floor(Math.random() * data.length)].text
+                fact2.innerText = data[Math.floor(Math.random() * data.length)].text
+                fact3.innerText = data[Math.floor(Math.random() * data.length)].text
+                fact4.innerText = data[Math.floor(Math.random() * data.length)].text
+                fact5.innerText = data[Math.floor(Math.random() * data.length)].text*/
+                myFacts.forEach(function(myFact){
+                    myFact.innerText = data[Math.floor(Math.random() * data.length)].text;
+                                        
+                }) 
+
+                
+            })
+            
+        });
+        button.innerHTML = "Atualizar Lista!";
+        newFact1.style.display = "inline";
+        newFact2.style.display = "inline";
+        newFact3.style.display = "inline";
+        newFact4.style.display = "inline";
+        newFact5.style.display = "inline";
+        container.style.display = "block";
+        fact1.style.display = "block";
+        fact2.style.display = "block";
+        fact3.style.display = "block";
+        fact4.style.display = "block";
+        fact5.style.display = "block";
+
+
+    }
+
 newFact1.addEventListener('click', function() {
     fetch(facts)
         .then(response => response.text())
@@ -90,42 +127,8 @@ newFact5.addEventListener('click', function() {
         })
 })
 
-button.addEventListener('click', function() {
-    fetch(facts)
-        .then(response => response.text())
-        .then(result => {
-            const data = JSON.parse(result)
-            
-            data.map(fact => {
-                /*fact1.innerText = data[Math.floor(Math.random() * data.length)].text
-                fact2.innerText = data[Math.floor(Math.random() * data.length)].text
-                fact3.innerText = data[Math.floor(Math.random() * data.length)].text
-                fact4.innerText = data[Math.floor(Math.random() * data.length)].text
-                fact5.innerText = data[Math.floor(Math.random() * data.length)].text*/
-                myFacts.forEach(function(myFact){
-                    myFact.innerText = data[Math.floor(Math.random() * data.length)].text;
-                                        
-                }) 
-
-                
-            })
-            
-        });
-        button.innerHTML = "Atualizar Lista!";
-        newFact1.style.display = "inline";
-        newFact2.style.display = "inline";
-        newFact3.style.display = "inline";
-        newFact4.style.display = "inline";
-        newFact5.style.display = "inline";
-        container.style.display = "block";
-        fact1.style.display = "block";
-        fact2.style.display = "block";
-        fact3.style.display = "block";
-        fact4.style.display = "block";
-        fact5.style.display = "block";
 
 
-    })
     
 
 
