@@ -14,7 +14,17 @@ const newFacts = [newFact1 = document.getElementById('newFact1'),
                     newFact4 = document.getElementById('newFact4'),
                     newFact5 = document.getElementById('newFact5')];
 
+
+
 const container = document.getElementById('listContainer')
+
+const containerList1 = document.getElementById('containerList1')
+const containerList2 = document.getElementById('containerList2')
+const containerList3 = document.getElementById('containerList3')
+const containerList4 = document.getElementById('containerList4')
+const containerList5 = document.getElementById('containerList5')
+
+
 
 newFact1.style.display = "none";
 newFact2.style.display = "none";
@@ -31,17 +41,14 @@ fact5.style.display = "none";
 container.style.display="none";
 
 function getFact() {
+    const listSize = document.getElementById("seletor");
+    const value = listSize.options[listSize.selectedIndex].text;
     fetch(facts)
         .then(response => response.text())
         .then(result => {
             const data = JSON.parse(result)
             
             data.map(fact => {
-                /*fact1.innerText = data[Math.floor(Math.random() * data.length)].text
-                fact2.innerText = data[Math.floor(Math.random() * data.length)].text
-                fact3.innerText = data[Math.floor(Math.random() * data.length)].text
-                fact4.innerText = data[Math.floor(Math.random() * data.length)].text
-                fact5.innerText = data[Math.floor(Math.random() * data.length)].text*/
                 myFacts.forEach(function(myFact){
                     myFact.innerText = data[Math.floor(Math.random() * data.length)].text;
                                         
@@ -51,21 +58,92 @@ function getFact() {
             })
             
         });
-        button.innerHTML = "Atualizar Lista!";
-        newFact1.style.display = "inline";
-        newFact2.style.display = "inline";
-        newFact3.style.display = "inline";
-        newFact4.style.display = "inline";
-        newFact5.style.display = "inline";
+    if(value == "1"){
         container.style.display = "block";
+        containerList1.style.display = "block"
+        button.innerHTML = "Atualizar Lista!";
+        newFact1.style.display = "inline";        
         fact1.style.display = "block";
-        fact2.style.display = "block";
-        fact3.style.display = "block";
-        fact4.style.display = "block";
-        fact5.style.display = "block";
-
-
+        containerList2.style.display = "none"
+        containerList3.style.display = "none"
+        containerList4.style.display = "none"
+        containerList5.style.display = "none"
+        
     }
+        
+    if(value == "2"){
+        container.style.display = "block";
+        containerList1.style.display = "block"
+        containerList2.style.display = "block"
+        button.innerHTML = "Atualizar Lista!";
+        newFact1.style.display = "inline";        
+        fact1.style.display = "block";
+        newFact2.style.display = "inline";        
+        fact2.style.display = "block";
+        containerList3.style.display = "none"
+        containerList4.style.display = "none"
+        containerList5.style.display = "none"        
+        
+    }
+
+    if(value == "3"){
+        container.style.display = "block";
+        containerList1.style.display = "block"
+        containerList2.style.display = "block"
+        containerList3.style.display = "block"
+        button.innerHTML = "Atualizar Lista!";
+        newFact1.style.display = "inline";        
+        fact1.style.display = "block";
+        newFact2.style.display = "inline";        
+        fact2.style.display = "block";
+        newFact3.style.display = "inline";        
+        fact3.style.display = "block";
+        containerList4.style.display = "none"
+        containerList5.style.display = "none"        
+        
+    }
+
+    if(value == "4"){
+        container.style.display = "block";
+        containerList1.style.display = "block"
+        containerList2.style.display = "block"
+        containerList3.style.display = "block"
+        containerList4.style.display = "block"
+        button.innerHTML = "Atualizar Lista!";
+        newFact1.style.display = "inline";        
+        fact1.style.display = "block";
+        newFact2.style.display = "inline";        
+        fact2.style.display = "block";
+        newFact3.style.display = "inline";        
+        fact3.style.display = "block";
+        newFact4.style.display = "inline";        
+        fact4.style.display = "block";
+        containerList5.style.display = "none"        
+        
+    }
+
+    if(value == "5"){
+        container.style.display = "block";
+        containerList1.style.display = "block"
+        containerList2.style.display = "block"
+        containerList3.style.display = "block"
+        containerList4.style.display = "block"
+        containerList5.style.display = "block"
+        button.innerHTML = "Atualizar Lista!";
+        newFact1.style.display = "inline";        
+        fact1.style.display = "block";
+        newFact2.style.display = "inline";        
+        fact2.style.display = "block";
+        newFact3.style.display = "inline";        
+        fact3.style.display = "block";
+        newFact4.style.display = "inline";        
+        fact4.style.display = "block";
+        newFact5.style.display = "inline";        
+        fact5.style.display = "block";
+        
+    }
+
+}
 
 newFact1.addEventListener('click', function() {
     fetch(facts)
