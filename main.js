@@ -1,6 +1,8 @@
 const facts = "./facts.json";
 
-const button = document.getElementById('botao')
+const button = document.getElementById('botao');
+
+const eraseList = document.getElementById('erase');
 
 const myFacts = [fact1 = document.getElementById('fact1'),
                     fact2 = document.getElementById('fact2'),
@@ -16,13 +18,13 @@ const newFacts = [newFact1 = document.getElementById('newFact1'),
 
 
 
-const container = document.getElementById('listContainer')
+const container = document.getElementById('listContainer');
 
-const containerList1 = document.getElementById('containerList1')
-const containerList2 = document.getElementById('containerList2')
-const containerList3 = document.getElementById('containerList3')
-const containerList4 = document.getElementById('containerList4')
-const containerList5 = document.getElementById('containerList5')
+const containerList1 = document.getElementById('containerList1');
+const containerList2 = document.getElementById('containerList2');
+const containerList3 = document.getElementById('containerList3');
+const containerList4 = document.getElementById('containerList4');
+const containerList5 = document.getElementById('containerList5');
 
 
 
@@ -69,7 +71,7 @@ function getFact() {
         containerList4.style.display = "none"
         containerList5.style.display = "none"
         
-    }
+    };
         
     if(value == "2"){
         container.style.display = "block";
@@ -84,7 +86,7 @@ function getFact() {
         containerList4.style.display = "none"
         containerList5.style.display = "none"        
         
-    }
+    };
 
     if(value == "3"){
         container.style.display = "block";
@@ -101,7 +103,7 @@ function getFact() {
         containerList4.style.display = "none"
         containerList5.style.display = "none"        
         
-    }
+    };
 
     if(value == "4"){
         container.style.display = "block";
@@ -120,7 +122,7 @@ function getFact() {
         fact4.style.display = "block";
         containerList5.style.display = "none"        
         
-    }
+    };
 
     if(value == "5"){
         container.style.display = "block";
@@ -141,9 +143,9 @@ function getFact() {
         newFact5.style.display = "inline";        
         fact5.style.display = "block";
         
-    }
+    };
 
-}
+};
 
 newFact1.addEventListener('click', function() {
     fetch(facts)
@@ -155,7 +157,7 @@ newFact1.addEventListener('click', function() {
                 fact1.innerText = data[Math.floor(Math.random() * data.length)].text;
             })
         })
-})
+});
 
 newFact2.addEventListener('click', function() {
     fetch(facts)
@@ -167,7 +169,7 @@ newFact2.addEventListener('click', function() {
                 fact2.innerText = data[Math.floor(Math.random() * data.length)].text;
             })
         })
-})
+});
 
 newFact3.addEventListener('click', function() {
     fetch(facts)
@@ -179,7 +181,7 @@ newFact3.addEventListener('click', function() {
                 fact3.innerText = data[Math.floor(Math.random() * data.length)].text;
             })
         })
-})
+});
 
 newFact4.addEventListener('click', function() {
     fetch(facts)
@@ -191,7 +193,7 @@ newFact4.addEventListener('click', function() {
                 fact4.innerText = data[Math.floor(Math.random() * data.length)].text;
             })
         })
-})
+});
 
 newFact5.addEventListener('click', function() {
     fetch(facts)
@@ -203,10 +205,9 @@ newFact5.addEventListener('click', function() {
                 fact5.innerText = data[Math.floor(Math.random() * data.length)].text;
             })
         })
+});
+
+eraseList.addEventListener('click', function() {
+    listContainer.style.display = "none";
+    button.innerHTML = "Obter lista de fatos!"
 })
-
-
-
-    
-
-
