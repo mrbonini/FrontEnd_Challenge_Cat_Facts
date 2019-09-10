@@ -15,14 +15,15 @@
         .then(response => response.text())
         .then(result => {
             const facts = JSON.parse(result);
-            const index = Math.floor(Math.random()*facts.length);
-            const text = facts[index].text;
+            
             while ($factList.firstChild) {
                 $factList.removeChild($factList.firstChild);
             };
             
             for(i = 0; i < length; i++) {
-
+                const index = Math.floor(Math.random()*facts.length);
+                const text = facts[index].text;
+                
                 let $li = document.createElement('li');
                 $li.className ="list-group-item";
                 $li.innerHTML = text;
